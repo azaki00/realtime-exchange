@@ -8,15 +8,18 @@ const fs = require('fs');
 
 app.use(cors());
 
+// // Serve React build - Add this line before your Socket.IO connection handling
+// app.use(express.static(path.join(__dirname, '../client/dist')));
+
 const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: "http://192.168.1.101:5173", // Update the correct port if necessary
         methods: ["GET", "POST"],
         transports: ['websocket', 'polling'],
     },
-})
+});
 
 // Function to read Excel data
 const readExcelData = () => {
