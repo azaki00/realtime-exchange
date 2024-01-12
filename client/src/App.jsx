@@ -1,11 +1,12 @@
 import React from 'react';
-import TabulatorTable from './components/TabulatorTable';
+import TableComponent from './components/TableComponent';
+import './App.css'
 
 function App() {
   return (
     <div className="App">
       <h1>Real-time Dashboard with Tabulator</h1>
-      <TabulatorTable />
+      <TableComponent />
     </div>
   );
 }
